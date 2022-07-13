@@ -1,16 +1,59 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  background: linear-gradient(-45deg , rgb(50, 48, 48), rgb(0, 0, 0));
+   background-size: 100%;
+   height: 100vh;
+   background-position: 0% 50%;
+    scroll-behavior: smooth;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.footer{
+  @apply flex flex-col w-full items-center justify-center pt-1 shadow-md shadow-white;
+   background:  linear-gradient(-45deg,#000, #575556, #000);
+	animation: gradient 15s ease alternate infinite;
+    background-size: 400% 400%;
+
 }
 
-* {
-  box-sizing: border-box;
+.glassy-background{
+  @apply  bg-glassy backdrop-blur-md;
+}
+
+.logo-bg{
+  @apply flex flex-row items-center justify-center p-1 ml-20 shadow-sm;
+  background: linear-gradient(-45deg,#000, #000, #575556, #000, #000);
+	animation: gradient 8s ease alternate infinite;
+    background-size: 400% 400%;
+}
+.footer-text{
+  @apply flex items-center justify-center gap-2 text-white text-center font-thin;
+}
+
+.scroll-down{
+  @apply text-white w-8 absolute right-20;
+  animation: scroll 0.8s ease alternate infinite;
+}
+
+@keyframes scroll{
+  to{
+    @apply mt-4;
+  }
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
